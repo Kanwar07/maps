@@ -3,8 +3,8 @@ import { MapContainer, Marker, Polygon, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Icon, divIcon, point } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import { statesData } from "./Data/PolygonData";
-import { markers } from "./Data/MarkerData";
+import { statesData } from "../Data/PolygonData";
+import { markers } from "../Data/MarkerData";
 import Control from "react-leaflet-custom-control";
 import { Button, Card, Typography } from "@mui/material";
 import LayersIcon from "@mui/icons-material/Layers";
@@ -16,7 +16,7 @@ function Maps() {
   const [statename, setstatename] = useState([]);
 
   const customIcon = new Icon({
-    iconUrl: require("./Assets/location.png"),
+    iconUrl: require("../Assets/location.png"),
     iconSize: [38, 38],
   });
 
