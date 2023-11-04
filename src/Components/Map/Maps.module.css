@@ -3,26 +3,3 @@
   padding: 0.5rem;
   border-radius: 50%;
 }
-
-.text1 {
-  font-size: larger;
-  font-weight: 600;
-  text-align: left;
-  padding: 0.5rem;
-}
-
-.textstate {
-  font-size: small;
-  font-weight: 900;
-}
-
-.textdensity {
-  font-size: small;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.text2 {
-  font-size: small;
-  font-style: italic;
-}

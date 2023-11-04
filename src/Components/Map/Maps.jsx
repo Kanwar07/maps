@@ -6,9 +6,10 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import { statesData } from "../Data/PolygonData";
 import { markers } from "../Data/MarkerData";
 import Control from "react-leaflet-custom-control";
-import { Button, Card, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import LayersIcon from "@mui/icons-material/Layers";
 import mapsstyle from "./Maps.module.css";
+import DensityCard from "../Card/DensityCard";
 
 function Maps() {
   const [polygon, setpolygon] = useState(false);
@@ -29,6 +30,8 @@ function Maps() {
 
   const handleLayerClick = () => {
     setpolygon(!polygon);
+    setden([]);
+    setstatename([]);
   };
 
   return (
@@ -99,19 +102,12 @@ function Maps() {
           })
         : null}
       <Control prepend position="topright">
-        <Button color="inherit">
+        <Button color="inherit" className={mapsstyle.button}>
           <LayersIcon className={mapsstyle.layer} onClick={handleLayerClick} />
         </Button>
-        <Card>
-          <Typography className={mapsstyle.text1} sx={{ fontSize: 14 }}>
-            US Population density
-            <br />
-            <span className={mapsstyle.textstate}>{statename}</span>
-            <br />
-            <span className={mapsstyle.textdensity}>{den}</span>
-            <span className={mapsstyle.text2}> people per square mile</span>
-          </Typography>
-        </Card>
+      </Control>
+      <Control prepend position="topleft">
+        {polygon ? <DensityCard den={den} statename={statename} /> : null}
       </Control>
     </MapContainer>
   );
